@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('fetching the code') {
+            steps {
+                git 'https://github.com/MK-Anusha/Java-Springboot.git'
+            }
+        }
+        stage('build creation') {
+            steps {
+                sh 'mvn install'
+            }
+        }
+    }
+}
